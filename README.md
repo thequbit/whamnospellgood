@@ -5,7 +5,7 @@ Python script that totals up all the spelling mistakes in the top stories on 13w
 
 Connects to http://m.13wham.com/display/1438 (at the time of thie script being authored this was the "top stories" page) and pulls down the links to the top stories.
 
-It then pulls the story text out of the <p> within the <div class="StoryBlock">.
+It then pulls the story text out of the p tags within the div tag with class="StoryBlock".
 
 It uses nltk to then tokenize everything.  Removes all tokens that are 1, 2, or 3 'chars' in length.  Spell checks words that only have letters in them using enchant.
 
