@@ -11,24 +11,6 @@ import string
 
 
 def is_spelled_correctly(word):
-	#url = "https://www.google.com/search?q=" + word
-	#print "Asking Google: " + gurl
-
-	# send the word to google
-	#drs = { 'User-Agent': "Mozilla/5.0 (X11; U; Linux i686) Gecko/20071127 Firefox/2.0.0.11" }
-	#rlreq = urllib2.Request(gurl,headers=hdrs)
-	#html = urllib2.urlopen(urlreq)
-	#soup = BeautifulSoup(ghtml)
-
-	# get all <p> with class="sp_cnt"
-	#pcnt = gsoup.find("p",attrs={"class": "sp_cnt"})
-	#pellng = gsoup.find("span",attrs={"class": "spell ng"})
-
-	# see if we got anything returned
-	#f spcnt.__str__() == "None" and spellng.__str__() == "None":
-	#	return False
-	#else:
-	#	return True
 
 	correct = True
 
