@@ -17,7 +17,7 @@ def is_spelled_correctly(word):
 	if re.match("^[A-Za-z]*$", word):
 		d = enchant.Dict("en_US")
 		correct = d.check(word)
-		#rint "Word = " + word + ", correct = " + correct.__str__()
+		#print "Word = %s, Correct = %s" % (word, correct)
 	
 	return correct 
 
@@ -45,14 +45,14 @@ def main(argv):
 	#repatern = re.compile("story*")
 	for tag in atags:
 		
-		#print "Processing: " + tag['href']
+		#print "Processing: %s" % tag['href']
 		# if it's actually a story link
 		if tag['href'].find("story") != -1:
 
 			# generate the url so it is complete for the urllib2 engine
 			storyurl = baseurl + tag['href']
 
-			print "Processing Story: " + storyurl
+			print "Processing Story: %s" % storyurl
 
 			# check the db to see if we have already processed the story
 			#print "     Checking database for story ..."
@@ -87,20 +87,21 @@ def main(argv):
 
 			#print type(words)
 
-			print "     Spell checking " + len(words.items()).__str__() + " words ..."
+			print "     Spell checking %i words" % len(words.items())
 
 			for word in words:
 				if is_spelled_correctly(word) == False:
 					mistakes += 1
 
-			print "     Story had spelling " + mistakes.__str__() + " errors in it."
+			print "     Story had spelling %i errors in it." % mistakes
 			print ""
 
 			totalmistakes += mistakes
 
 	print "... done"
 
-	print "Today's Top storries had " + totalmistakes.__str__() + " spelling mistakes in them."
+	print "Today's Top stories had %i spelling mistakes in them." % totalmistakes
 
-if __name__ == '__main__': sys.exit(main(sys.argv))
+if __name__ == '__main__':
+	sys.exit(main(sys.argv))
 
